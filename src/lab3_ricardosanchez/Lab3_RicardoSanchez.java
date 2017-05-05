@@ -122,6 +122,9 @@ public class Lab3_RicardoSanchez {
                         } while (resp == 's' || resp == 'S');
                         break;
                     case 2: //Modificar Jugadores --------------------------------------------------------------------------------------------------------------
+                        for (int i = 0; i < J.size(); i++) {
+                            System.out.println("Jugador #" + i + "  " +J.get(i));
+                        }
                         System.out.println("Ingrese el numero del jugador que desea modificar");
                         int mod = sc.nextInt();
                         while (mod < 0 || mod > J.size()){
@@ -197,7 +200,10 @@ public class Lab3_RicardoSanchez {
                             }
                         break;
                     case 3: //Eliminar Jugador ------------------------------------------------------------------------------------------------------------------
-                        System.out.println("Ingrese el numero del jugador que desea eliminar (Use listar Jugadores para ver sus numeros asignados):");
+                        for (int i = 0; i < J.size(); i++) {
+                            System.out.println("Jugador #" + i + "  " +J.get(i));
+                        }
+                        System.out.println("Ingrese el numero del jugador que desea eliminar:");
                         int elim = sc.nextInt();
                         J.remove(elim);
                         break;
