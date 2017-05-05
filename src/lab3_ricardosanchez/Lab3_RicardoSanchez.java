@@ -29,13 +29,16 @@ public class Lab3_RicardoSanchez {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        Equipos EQ = new Equipos();
         ArrayList<Jugador> J = new ArrayList();
         ArrayList<Equipos> E = new ArrayList();
+        ArrayList<Jugador> JV = new ArrayList();
         System.out.println("_____MENU_____"
                 + "\n 1) Jugador"
                 + "\n 2) Equipo"
                 + "\n 3) Listar"
-                + "\n 4) Comprar jugadores");
+                + "\n 4) Comprar jugadores"
+                + "\n 5) Organizar equipo");
         System.out.println("Ingrese el numero lo que desea ver");
         int Opcion = sc.nextInt();
 
@@ -322,9 +325,32 @@ public class Lab3_RicardoSanchez {
                     System.out.println("Numero invalido. Ingrese otro:");
                     compra = sc.nextInt();
                 }
+                if(E.get(ECompra).getPresupuesto() < J.get(compra).getPrecio()){
+                    System.out.println("No tiene suficiente dinero");
+                    break;
+                }else{
+                E.get(ECompra).setPresupuesto(E.get(ECompra).getPresupuesto() - J.get(compra).getPrecio());
                 System.out.println("Compra finalizada");
                 J.get(compra).setEstado("Comprado");
                 J.get(compra).setEquipo(E.get(ECompra).getEquipo());
+                JV.add(J.get(compra));
+                E.get(ECompra).getMiembros().add(J.get(compra));
+                }
+                break;
+                
+            case 5: //Organizar el equipo ==============================================================================================================
+                System.out.println("Organizacion de equipos");
+                for (int i = 0; i < E.size(); i++) {
+                    System.out.println("Equipo #" + i + "   " + E.get(i));
+                }
+                System.out.println("Ingrese el numero del equipo que va a organizar");
+                int eo = sc.nextInt();
+                while(eo > E.size() || eo < 0){
+                    System.out.println("Numero Invalido. Ingrese otro");
+                    eo = sc.nextInt();
+                }
+                
+                
                 break;
             default:
                 break;
