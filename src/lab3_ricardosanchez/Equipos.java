@@ -11,8 +11,7 @@ public class Equipos extends Jugador{
         super();
     }
 
-    public Equipos(String NombreE, String Ciudad, int Palmares, int Presupuesto, String Nombre, String Apellido, String Estado, String PaisDNaci, String PiePref, String Equipo, int Edad, int Num, int Precio) {
-        super(Nombre, Apellido, Estado, PaisDNaci, PiePref, Equipo, Edad, Num, Precio);
+    public Equipos(String NombreE, String Ciudad, int Palmares, int Presupuesto) {
         this.NombreE = NombreE;
         this.Ciudad = Ciudad;
         this.Palmares = Palmares;
