@@ -30,6 +30,8 @@ public class Lab3_RicardoSanchez {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         Equipos EQ = new Equipos();
+        ArrayList EquipoT = new ArrayList();
+        ArrayList EquipoS = new ArrayList();
         ArrayList<Jugador> J = new ArrayList();
         ArrayList<Equipos> E = new ArrayList();
         ArrayList<Jugador> JV = new ArrayList();
@@ -348,6 +350,21 @@ public class Lab3_RicardoSanchez {
                 while(eo > E.size() || eo < 0){
                     System.out.println("Numero Invalido. Ingrese otro");
                     eo = sc.nextInt();
+                }
+                if(E.get(eo).getMiembros().size() >= 11){
+                    System.out.println("Cantidad de delanteros que desea en el equipo");
+                    int Del = sc.nextInt();
+                    System.out.println("Cantidad de medio que desea en el equipo");
+                    int med = sc.nextInt();
+                    System.out.println("Cantidad de defensas que desea en el equipo");
+                    int def = sc.nextInt();
+                    System.out.println("Solo habra un portero por las reglas del juego");
+                    for (int i = 0; i < E.get(eo).getMiembros().size(); i++) {
+                        
+                    }
+                    
+                }else{
+                    System.out.println("Cantidad de jugadores minimos no alcanzada (Minimo 11)");
                 }
                 
                 
